@@ -1,0 +1,102 @@
+
+/* =========================
+   REPORTER HORIZONTAL SCROLL
+   ========================= */
+
+.reporter-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 75px;
+  padding: 25px 10px 35px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* IMPORTANT */
+}
+
+.reporter-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   REPORTER ITEM
+   ========================= */
+
+.reporter-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center; /* snap per swipe */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.35s ease;
+}
+
+.reporter-item:hover {
+  transform: scale(1.12);
+}
+
+/* =========================
+   REPORTER IMAGE
+   ========================= */
+
+.reporter-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #58137b;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.reporter-item:hover .reporter-img {
+  box-shadow: 0 15px 30px rgba(88, 19, 123, 0.45);
+}
+
+/* =========================
+   NAME
+   ========================= */
+
+.reporter-name {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  color: #9bae9f;
+}
+
+/* =========================
+   DOT INDICATOR (CORRECT FLOW)
+   ========================= */
+
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  gap: 14px;
+}
+
+/* inactive dot */
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #b7afba;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+
+/* active dot */
+.indicator-dot.active {
+  width: 28px;                 /* pill style */
+  border-radius: 20px;
+  background: linear-gradient(90deg, #58137b, #9b4dcc);
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(155, 77, 204, 0.6);
+}
+
+
+
+
+
+
+
+
+

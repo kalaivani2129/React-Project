@@ -1,0 +1,92 @@
+
+.news-card {
+  max-width: 345px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+  display: inline-block;
+}
+.news-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+}
+
+.news-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.news-badge.technology { background: linear-gradient(135deg, #8b2681ff, #6c63ff); }
+.news-badge.business { background: linear-gradient(135deg, #17593b, #539963); }
+.news-badge.health { background: linear-gradient(135deg, #dc3545, #ff6b6b); }
+.news-badge.sports { background: linear-gradient(135deg, #7a9522, #ff9800); }
+.news-badge.entertainment { background: linear-gradient(135deg, #6f42c1, #ff4dd2); }
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.news-button {
+    margin-top: 20px;
+  padding: 10px 26px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #a855f7;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+/* Hover effect: scale + shadow */
+.news-button:hover {
+   background: #a855f7;
+
+}
+.news-button.read-more {
+  margin-top: 20px;
+  padding: 10px 26px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #a855f7;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block; 
+}
+
+.news-button.read-more:hover {
+  background: linear-gradient(135deg, #4d7cff, #8b63ff); 
+  text-decoration: none; 
+}
+
+
+/* Save button */
+.news-button.save {
+  background: linear-gradient(135deg, #6c757d, #343a40);
+}
+
+.news-button.save.saved {
+  background: linear-gradient(135deg, #564177, #363d7b);
+}
+
+.news-button.save:hover {
+  background: linear-gradient(135deg, #2e193f, #52528a); 
+}

@@ -1,0 +1,50 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #411f5a, #000); 
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+.news-board h2 {
+  color: #fff; 
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  padding: 120px 20px;
+  width: 100%;
+}
+
+.news-card.placeholder {
+  background: transparent;
+  box-shadow: none;
+  height: 0; 
+}
+
+.news-card {
+  background-color: rgba(47, 28, 66, 0.4); 
+  max-width: 450px;
+  height: 300px; 
+  border-radius: 0px;
+  box-shadow: 0 8px 20px rgba(53, 24, 62, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.news-card:hover {
+  transform: translateY(-10px) scale(1.05); /* lifts and slightly zooms */
+  box-shadow: 0 15px 30px rgba(53, 24, 62, 0.7); /* stronger shadow */
+  background-color: rgba(47, 28, 66, 0.6); /* darker violet on hover */
+  cursor: pointer;
+}
+
+
+

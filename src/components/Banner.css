@@ -1,0 +1,100 @@
+
+.banner {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Background image */
+.banner-img {
+  width: 100%;
+  height: 170%;
+  object-fit: cover;
+  transform: scale(1.1);
+  animation: slowZoom 12s ease forwards;
+}
+
+@keyframes slowZoom {
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Dark overlay */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.25)
+  );
+  display: flex;
+  align-items: center;
+  padding-left: 90px;
+}
+
+/* Content */
+.banner-content {
+  max-width: 650px;
+  color: #ffffff;
+  animation: fadeSlide 1.2s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+.banner-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+.banner-subtitle {
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  margin-bottom: 35px;
+}
+
+/* Categories container */
+.banner-categories {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Category buttons */
+.category-btn {
+  padding: 11px 24px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 0.95rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background: #ffffff;
+  color: #000;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+

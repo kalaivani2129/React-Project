@@ -1,0 +1,79 @@
+.news-card {
+  max-width: 345px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+  display: inline-block;
+}
+
+.news-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+}
+
+.news-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.news-badge.technology { background: linear-gradient(135deg, #8b2681ff, #6c63ff); }
+.news-badge.business { background: linear-gradient(135deg, #17593b, #539963); }
+.news-badge.health { background: linear-gradient(135deg, #dc3545, #ff6b6b); }
+.news-badge.sports { background: linear-gradient(135deg, #7a9522, #ff9800); }
+.news-badge.entertainment { background: linear-gradient(135deg, #6f42c1, #ff4dd2); }
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.news-button {
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 10px 20px;       
+  border-radius: 12px;       
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;    
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-button:hover {
+  transform: scale(1.08);      
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35); 
+}
+
+.news-button.read-more {
+  background: linear-gradient(135deg, #0d6efd, #6c63ff);
+}
+
+.news-button.save {
+  background: linear-gradient(135deg, #6c757d, #343a40);
+}
+
+.news-button.save.saved {
+  background: linear-gradient(135deg, #28a745, #198754);
+}
+
+
+
+
+
