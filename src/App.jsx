@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import Banner from "./Components/Banner";
@@ -9,7 +8,7 @@ import Contact from "./Components/Contact";
 import ReporterCard from "./Components/ReporterCard";
 import "./App.css";
 
-
+// Reporter Images
 import Reporter2 from "./assets/Reporter 6.jpg";
 import Reporter3 from "./assets/Reporter 3.jpg";
 import Reporter4 from "./assets/Reporter 4.jpg";
@@ -18,9 +17,10 @@ import Reporter6 from "./assets/Reporter 5.jpg";
 import Reporter7 from "./assets/Reporter 1.jpg";
 
 const App = () => {
+  // CATEGORY STATE
   const [category, setCategory] = useState("technology");
 
-  // Reporter data
+  // REPORTER DATA
   const reporters = [
     { name: "Meera Nair", image: Reporter2, role: "Tech Correspondent" },
     { name: "Ananya Patel", image: Reporter3, role: "Sports Analyst" },
@@ -30,18 +30,19 @@ const App = () => {
     { name: "Pooja", image: Reporter7, role: "Senior News Anchor" },
   ];
 
+  // REPORTER SCROLL
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [totalDots, setTotalDots] = useState(0);
 
-  // Section refs
+  // PAGE SECTION REFS
   const homeRef = useRef(null);
   const categoryRef = useRef(null);
   const reporterRef = useRef(null);
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
 
-  // Reporter scroll dots
+  // DOT INDICATOR LOGIC
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -55,7 +56,7 @@ const App = () => {
     setActiveIndex(page);
   };
 
-  // Scroll to a section
+  // NAVBAR SCROLL FUNCTION
   const scrollToSection = (id) => {
     const refs = {
       home: homeRef,
@@ -65,42 +66,56 @@ const App = () => {
       contact: contactRef,
     };
     const el = refs[id]?.current;
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
     <>
-      {/* Navbar */}
+      {/* NAVBAR */}
       <Navbar scrollToSection={scrollToSection} />
 
-      {/* Home / Banner */}
+      {/* HOME / BANNER */}
       <div id="home" ref={homeRef}>
         <Banner category={category} />
       </div>
 
-      {/* Category Section */}
+      {/* CATEGORY */}
       <div id="category" ref={categoryRef}>
         <Categories category={category} setCategory={setCategory} />
       </div>
 
-      {/* Reporter Section */}
+      {/*NEWS BOARD*/}
+      <div className="container mt-4">
+        <NewsBoard category={category} />
+      </div>
+
+      {/* REPORTERS */}
       <div id="reporter" ref={reporterRef} className="container mt-5 pt-5">
         <h3 className="mb-3">Meet Our Reporters</h3>
+
         <div
           className="reporter-scroll"
           ref={scrollRef}
           onScroll={handleScroll}
-          style={{ display: "flex", overflowX: "auto", gap: "15px", paddingBottom: "10px" }}
+          style={{
+            display: "flex",
+            overflowX: "auto",
+            gap: "15px",
+            paddingBottom: "10px",
+          }}
         >
           {reporters.map((reporter, index) => (
             <ReporterCard key={index} reporter={reporter} />
           ))}
         </div>
-        <div className="scroll-indicator" style={{ marginTop: "10px", textAlign: "center" }}>
+
+        {/* DOTS */}
+        <div style={{ marginTop: "10px", textAlign: "center" }}>
           {Array.from({ length: totalDots }).map((_, index) => (
             <span
               key={index}
-              className={`indicator-dot ${activeIndex === index ? "active" : ""}`}
               style={{
                 display: "inline-block",
                 width: "10px",
@@ -114,12 +129,12 @@ const App = () => {
         </div>
       </div>
 
-      {/* About Section */}
+      {/* ABOUT */}
       <div id="about" ref={aboutRef}>
         <About />
       </div>
 
-      {/* Contact Section */}
+      {/* CONTACT */}
       <div id="contact" ref={contactRef}>
         <Contact />
       </div>
@@ -128,7 +143,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-

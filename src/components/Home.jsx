@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import MenuCategories from "./MenuCategories";
-import Banner from "./Banner";
 import CategoryPosts from "./CategoryPosts";
 
 const Home = () => {

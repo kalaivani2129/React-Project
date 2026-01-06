@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 import "./NewsBoard.css";

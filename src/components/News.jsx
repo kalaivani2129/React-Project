@@ -1,5 +1,3 @@
-
-// News.jsx
 import NewsCard from "./NewsCard";
 import newsData from "./newsData";
 import "./News.css";

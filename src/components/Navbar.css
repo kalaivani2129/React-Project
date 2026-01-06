@@ -63,11 +63,11 @@
 
 .categories-scroll {
   display: flex;
-  gap: 20px; /* more space between buttons */
+  gap: 20px; 
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 15px;
-  scroll-snap-type: x mandatory; /* scroll snap */
+  scroll-snap-type: x mandatory; 
 }
 
 .categories-scroll::-webkit-scrollbar {
@@ -87,8 +87,7 @@
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  scroll-snap-align: center; /* snap */
-}
+  scroll-snap-align: center; }
 
 /* Hover glow */
 .category-btn:hover {

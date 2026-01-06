@@ -1,4 +1,3 @@
-
 .news-card {
   max-width: 345px;
   border-radius: 15px;
@@ -53,7 +52,7 @@
   
 }
 
-/* Hover effect: scale + shadow */
+
 .news-button:hover {
    background: #a855f7;
 
@@ -78,7 +77,7 @@
 }
 
 
-/* Save button */
+
 .news-button.save {
   background: linear-gradient(135deg, #6c757d, #343a40);
 }
