@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./Banner.css";
 import bannerImage from "../assets/banner.jpg";
@@ -15,8 +14,6 @@ const Banner = () => {
   return (
     <section className="banner">
       <img src={bannerImage} alt="News Banner" className="banner-img" />
-
-      {/* Overlay */}
       <div className="banner-overlay">
         <div className="banner-content">
           <h1 className="banner-title">

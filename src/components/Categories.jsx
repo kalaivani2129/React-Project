@@ -1,6 +1,4 @@
-
 import React, { useState } from "react";
-import NewsBoard from "./NewsBoard";
 import "./Categories.css";
 
 const Categories = ({ category, setCategory }) => {
@@ -10,8 +8,6 @@ const Categories = ({ category, setCategory }) => {
   const handleClick = (cat) => {
     setCategory(cat);
     setFlippedCategory(cat);
-
-   
     setTimeout(() => setFlippedCategory(""), 700);
   };
 
@@ -39,13 +35,8 @@ const Categories = ({ category, setCategory }) => {
           </div>
         ))}
       </div>
-
-      <div className="category-news mt-4">
-        <NewsBoard category={category} />
-      </div>
     </div>
   );
 };
 
 export default Categories;
-

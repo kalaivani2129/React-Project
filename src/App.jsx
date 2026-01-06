@@ -86,10 +86,11 @@ const App = () => {
         <Categories category={category} setCategory={setCategory} />
       </div>
 
-      {/*NEWS BOARD*/}
+     {/* NEWS BOARD */}
       <div className="container mt-4">
-        <NewsBoard category={category} />
+     <NewsBoard category={category} />
       </div>
+
 
       {/* REPORTERS */}
       <div id="reporter" ref={reporterRef} className="container mt-5 pt-5">

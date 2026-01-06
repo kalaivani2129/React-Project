@@ -11,7 +11,13 @@ const NewsBoard = ({ category }) => {
         const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
         const response = await fetch(url);
         const data = await response.json();
-        setArticles(data.articles || []);
+
+        
+        const uniqueArticles = data.articles?.filter(
+          (v, i, a) => a.findIndex((t) => t.url === v.url) === i
+        ) || [];
+
+        setArticles(uniqueArticles);
       } catch (err) {
         console.error("Error fetching news:", err);
       }
@@ -20,24 +26,18 @@ const NewsBoard = ({ category }) => {
     fetchNews();
   }, [category]);
 
-  const fullRowsArticles = [...articles];
-  const remainder = articles.length % 3;
-  if (remainder !== 0) {
-    const placeholders = new Array(3 - remainder).fill(null);
-    fullRowsArticles.push(...placeholders);
-  }
+  if (!articles.length) return <p className="text-center mt-3">Loading news...</p>;
 
   return (
-    <div className="news-board">
-      <h2 className="text-center mt-3 mb-4">
-        Latest <span className="badge bg-danger">News</span>
+    <div className="news-board container my-4">
+      <h2 className="text-center mb-4">
+        Latest <span className="badge bg-danger">{category}</span> News
       </h2>
 
-      <div className="news-grid">
-        {fullRowsArticles.map((news, index) =>
-          news ? (
+      <div className="row">
+        {articles.map((news, idx) => (
+          <div key={idx} className="col-md-4 mb-3">
             <NewsItem
-              key={index}
               title={news.title}
               description={news.description}
               src={news.urlToImage}
@@ -45,10 +45,8 @@ const NewsBoard = ({ category }) => {
               category={category}
               publishedAt={news.publishedAt}
             />
-          ) : (
-            <div key={index} className="news-card placeholder"></div>
-          )
-        )}
+          </div>
+        ))}
       </div>
     </div>
   );
