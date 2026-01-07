@@ -1,5 +1,6 @@
 {
   "name": "newsmag",
+  "homepage": "https://kalaivani2129.github.io/React-Project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -22,3 +23,5 @@
     "vite": "^7.2.4"
   }
 }
+
+
